@@ -18,7 +18,7 @@ namespace RentaCarWebApi.Controllers
     {
         KullaniciBusiness KullaniciBusiness = new KullaniciBusiness();
 
-        [APIAuthorizeAttribute(Roles="Y")]
+        //[APIAuthorizeAttribute(Roles="Y")]
         public IHttpActionResult Get()
         {
             var Kullanicilar = KullaniciBusiness.KullaniciHepsiniSec();
@@ -26,8 +26,14 @@ namespace RentaCarWebApi.Controllers
                 return Ok(Kullanicilar);
         }
 
-        // GET: api/Arac/5
-
+        // GET: api/Arac/Birkan14
+        public IHttpActionResult Get(string kullaniciAdi)
+        {
+            var Kullanici = KullaniciBusiness.KullaniciSecIsim(kullaniciAdi);
+            if (Kullanici == null)
+                return NotFound();
+            return Ok(Kullanici);
+        }
         public IHttpActionResult Get(int id)
         {
             var Kullanici = KullaniciBusiness.KullaniciIdSec(id);

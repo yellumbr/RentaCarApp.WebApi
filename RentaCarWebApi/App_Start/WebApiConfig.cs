@@ -24,7 +24,7 @@ namespace RentaCarWebApi
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            config.MessageHandlers.Add(new KeyHandler());
+           // config.MessageHandlers.Add(new KeyHandler());
            // config.Filters.Add(new APIAuthorizeAttribute());
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("application/octet-stream"));
         }
