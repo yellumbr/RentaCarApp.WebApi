@@ -18,12 +18,13 @@ namespace RentaCarWebApi.ApiHelpers
         {
             var queryString = request.RequestUri.ParseQueryString();
             var Key = queryString["Anahtar"];
-            SirketBusiness kullaniciBusiness = new SirketBusiness();
-            var user = kullaniciBusiness.SirketAnahtarSec(Key);
+            //var Key = request.Headers.GetValues("anahtar").FirstOrDefault();
+            KullaniciBusiness kullaniciBusiness = new KullaniciBusiness();
+            var user = kullaniciBusiness.KullaniciAnahtarSec(Key);
 
             if(user!=null)
             {
-                var principal = new ClaimsPrincipal(new GenericIdentity(user.SirketAdi,"Anahtar"));
+                var principal = new ClaimsPrincipal(new GenericIdentity(user.KullaniciAdi,"Anahtar"));
                 HttpContext.Current.User = principal;
             }
            

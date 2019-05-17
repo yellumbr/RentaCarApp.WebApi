@@ -12,58 +12,59 @@ using RentaCarWebApi.ApiHelpers;
 namespace RentaCarWebApi.Controllers
 {
     [ApiExceptionAttribute]
-   
     [EnableCors("*", "*", "*")]
-    public class SirketController : ApiController
+    public class AracController : ApiController
     {
-        SirketBusiness sirketBusiness = new SirketBusiness();
+        AracBusiness AracBusiness = new AracBusiness();
+
         // GET: api/Arac
-      
+
         public IHttpActionResult Get()
         {
-            var sirketler = sirketBusiness.SirketHepsiniSec();
-            return Ok(sirketler);
+            var Araclar = AracBusiness.AracHepsiniSec();
+
+            return Ok(Araclar);
         }
 
         // GET: api/Arac/5
         public IHttpActionResult Get(int id)
         {
-            var sirket = sirketBusiness.SirketIdSec(id);
-            if (sirket == null)
+            var Arac = AracBusiness.AracIdSec(id);
+            if (Arac == null)
                 return NotFound();
-            return Ok(sirket);
+            return Ok(Arac);
         }
 
         // POST: api/Arac
-        public IHttpActionResult Post([FromBody]Sirket sirket)
+        public IHttpActionResult Post([FromBody]Arac Arac)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                var olusturulanSirket = sirketBusiness.SirketEkle(sirket);
-                return CreatedAtRoute("DefaultApi", new { id = olusturulanSirket.SirketID }, olusturulanSirket);
-            }  
+                var olusturulanArac = AracBusiness.AracEkle(Arac);
+                return CreatedAtRoute("DefaultApi", new { id = olusturulanArac.AracID }, olusturulanArac);
+            }
             return BadRequest();
 
         }
 
         // PUT: api/Arac/5
-        public IHttpActionResult Put(int id,[FromBody]Sirket sirket)
+        public IHttpActionResult Put(int id, [FromBody]Arac Arac)
         {
-           sirket.SirketID = id;
-            if (sirketBusiness.SirketIdSec(id) == null)
+            Arac.AracID = id;
+            if (AracBusiness.AracIdSec(id) == null)
                 return NotFound();
             else if (ModelState.IsValid == false)
                 return BadRequest();
             else
-                return Ok(sirketBusiness.SirketGuncelle(sirket));
+                return Ok(AracBusiness.AracGuncelle(Arac));
         }
 
         // DELETE: api/Arac/5
         public IHttpActionResult Delete(int id)
         {
-            if (sirketBusiness.SirketIdSec(id) == null)
+            if (AracBusiness.AracIdSec(id) == null)
                 return NotFound();
-            return Ok(sirketBusiness.SirketIdSil(id));
+            return Ok(AracBusiness.AracIdSil(id));
         }
     }
 }

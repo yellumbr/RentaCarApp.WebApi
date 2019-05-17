@@ -12,58 +12,59 @@ using RentaCarWebApi.ApiHelpers;
 namespace RentaCarWebApi.Controllers
 {
     [ApiExceptionAttribute]
-   
     [EnableCors("*", "*", "*")]
-    public class SirketController : ApiController
+    public class MusteriController : ApiController
     {
-        SirketBusiness sirketBusiness = new SirketBusiness();
+        MusteriBusiness MusteriBusiness = new MusteriBusiness();
+
         // GET: api/Arac
-      
+
         public IHttpActionResult Get()
         {
-            var sirketler = sirketBusiness.SirketHepsiniSec();
-            return Ok(sirketler);
+            var Musterilar = MusteriBusiness.MusteriHepsiniSec();
+
+            return Ok(Musterilar);
         }
 
         // GET: api/Arac/5
         public IHttpActionResult Get(int id)
         {
-            var sirket = sirketBusiness.SirketIdSec(id);
-            if (sirket == null)
+            var Musteri = MusteriBusiness.MusteriIdSec(id);
+            if (Musteri == null)
                 return NotFound();
-            return Ok(sirket);
+            return Ok(Musteri);
         }
 
         // POST: api/Arac
-        public IHttpActionResult Post([FromBody]Sirket sirket)
+        public IHttpActionResult Post([FromBody]Musteri Musteri)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                var olusturulanSirket = sirketBusiness.SirketEkle(sirket);
-                return CreatedAtRoute("DefaultApi", new { id = olusturulanSirket.SirketID }, olusturulanSirket);
-            }  
+                var olusturulanMusteri = MusteriBusiness.MusteriEkle(Musteri);
+                return CreatedAtRoute("DefaultApi", new { id = olusturulanMusteri.MusteriID }, olusturulanMusteri);
+            }
             return BadRequest();
 
         }
 
         // PUT: api/Arac/5
-        public IHttpActionResult Put(int id,[FromBody]Sirket sirket)
+        public IHttpActionResult Put(int id, [FromBody]Musteri Musteri)
         {
-           sirket.SirketID = id;
-            if (sirketBusiness.SirketIdSec(id) == null)
+            Musteri.MusteriID = id;
+            if (MusteriBusiness.MusteriIdSec(id) == null)
                 return NotFound();
             else if (ModelState.IsValid == false)
                 return BadRequest();
             else
-                return Ok(sirketBusiness.SirketGuncelle(sirket));
+                return Ok(MusteriBusiness.MusteriGuncelle(Musteri));
         }
 
         // DELETE: api/Arac/5
         public IHttpActionResult Delete(int id)
         {
-            if (sirketBusiness.SirketIdSec(id) == null)
+            if (MusteriBusiness.MusteriIdSec(id) == null)
                 return NotFound();
-            return Ok(sirketBusiness.SirketIdSil(id));
+            return Ok(MusteriBusiness.MusteriIdSil(id));
         }
     }
 }
