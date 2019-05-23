@@ -27,9 +27,18 @@ namespace RentaCarWebApi.Controllers
         }
 
         // GET: api/Arac/5
+        //public IHttpActionResult Get(int id)
+        //{
+        //    var Yonetici = YoneticiBusiness.YoneticiIdSec(id);
+        //    if (Yonetici == null)
+        //        return NotFound();
+        //    return Ok(Yonetici);
+        //}
+
+        [HttpGet]
         public IHttpActionResult Get(int id)
         {
-            var Yonetici = YoneticiBusiness.YoneticiIdSec(id);
+            var Yonetici = YoneticiBusiness.YoneticiKullaniciIdSec(id);
             if (Yonetici == null)
                 return NotFound();
             return Ok(Yonetici);

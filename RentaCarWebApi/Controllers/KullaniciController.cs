@@ -21,9 +21,10 @@ namespace RentaCarWebApi.Controllers
         //[APIAuthorizeAttribute(Roles="Y")]
         public IHttpActionResult Get()
         {
+          
             var Kullanicilar = KullaniciBusiness.KullaniciHepsiniSec();
-       
                 return Ok(Kullanicilar);
+           
         }
 
         // GET: api/Arac/Birkan14

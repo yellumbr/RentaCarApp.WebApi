@@ -91,9 +91,6 @@ C:\Users\birkankader\source\repos\RentaCarWebApi\RentaCarWebApi\obj\Debug\RentaC
 C:\Users\birkankader\source\repos\RentaCarWebApi\RentaCarWebApi\obj\Debug\RentaCarWebApi.dll
 C:\Users\birkankader\source\repos\RentaCarWebApi\RentaCarWebApi\obj\Debug\RentaCarWebApi.pdb
 C:\Users\birkankader\source\repos\RentaCarWebApi\RentaCarWebApi\obj\Debug\RentaCarWebApi.csprojAssemblyReference.cache
-Y:\RentaCarApp.WebApi\RentaCarWebApi\obj\Debug\RentaCarWebApi.csproj.CoreCompileInputs.cache
-Y:\RentaCarApp.WebApi\RentaCarWebApi\obj\Debug\RentaCarWebApi.dll
-Y:\RentaCarApp.WebApi\RentaCarWebApi\obj\Debug\RentaCarWebApi.pdb
 Y:\RentaCarApp.WebApi\RentaCarWebApi\bin\RentaCarWebApi.dll.config
 Y:\RentaCarApp.WebApi\RentaCarWebApi\bin\RentaCarWebApi.dll
 Y:\RentaCarApp.WebApi\RentaCarWebApi\bin\RentaCarWebApi.pdb
@@ -182,5 +179,8 @@ Y:\RentaCarApp.WebApi\RentaCarWebApi\bin\Antlr3.Runtime.pdb
 Y:\RentaCarApp.WebApi\RentaCarWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 Y:\RentaCarApp.WebApi\RentaCarWebApi\bin\DataAccesLayer.pdb
 Y:\RentaCarApp.WebApi\RentaCarWebApi\bin\Commons.pdb
-Y:\RentaCarApp.WebApi\RentaCarWebApi\obj\Debug\RentaCarWebApi.csproj.CopyComplete
 Y:\RentaCarApp.WebApi\RentaCarWebApi\obj\Debug\RentaCarWebApi.csprojAssemblyReference.cache
+Y:\RentaCarApp.WebApi\RentaCarWebApi\obj\Debug\RentaCarWebApi.csproj.CoreCompileInputs.cache
+Y:\RentaCarApp.WebApi\RentaCarWebApi\obj\Debug\RentaCarWebApi.csproj.CopyComplete
+Y:\RentaCarApp.WebApi\RentaCarWebApi\obj\Debug\RentaCarWebApi.dll
+Y:\RentaCarApp.WebApi\RentaCarWebApi\obj\Debug\RentaCarWebApi.pdb

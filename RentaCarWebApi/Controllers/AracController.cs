@@ -35,6 +35,14 @@ namespace RentaCarWebApi.Controllers
             return Ok(Arac);
         }
 
+        public IHttpActionResult Get(string plaka)
+        {
+            var Arac = AracBusiness.AracPlakaSec(plaka);
+            if (Arac == null)
+                return NotFound();
+           return Ok(AracBusiness.AracGuncelle(Arac));
+        }
+
         // POST: api/Arac
         public IHttpActionResult Post([FromBody]Arac Arac)
         {
@@ -58,6 +66,18 @@ namespace RentaCarWebApi.Controllers
             else
                 return Ok(AracBusiness.AracGuncelle(Arac));
         }
+        
+        public IHttpActionResult PutKirala(int arac, [FromBody]Arac Arac)
+        {
+            Arac.AracID = arac;
+            if (AracBusiness.AracIdSec(arac) == null)
+                return NotFound();
+            else if (ModelState.IsValid == false)
+                return BadRequest();
+            else
+                return Ok(AracBusiness.AracKirala(Arac));
+        }
+
 
         // DELETE: api/Arac/5
         public IHttpActionResult Delete(int id)

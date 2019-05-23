@@ -35,6 +35,14 @@ namespace RentaCarWebApi.Controllers
             return Ok(Musteri);
         }
 
+        public IHttpActionResult GetKullanici(int kullaniciId)
+        {
+            var Musteri = MusteriBusiness.MusteriKullaniciIdSec(kullaniciId);
+            if (Musteri == null)
+                return NotFound();
+            return Ok(Musteri);
+        }
+
         // POST: api/Arac
         public IHttpActionResult Post([FromBody]Musteri Musteri)
         {
@@ -66,5 +74,7 @@ namespace RentaCarWebApi.Controllers
                 return NotFound();
             return Ok(MusteriBusiness.MusteriIdSil(id));
         }
+
+        
     }
 }
