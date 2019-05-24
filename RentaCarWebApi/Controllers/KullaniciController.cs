@@ -26,7 +26,13 @@ namespace RentaCarWebApi.Controllers
                 return Ok(Kullanicilar);
            
         }
-
+        public IHttpActionResult GetAnahtar(string anahtar)
+        {
+            var Kullanici = KullaniciBusiness.KullaniciAnahtarSec(anahtar);
+            if (Kullanici == null)
+                return NotFound();
+            return Ok(Kullanici);
+        }
         // GET: api/Arac/Birkan14
         public IHttpActionResult Get(string kullaniciAdi)
         {
